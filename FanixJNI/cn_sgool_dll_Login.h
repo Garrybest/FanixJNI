@@ -7,21 +7,21 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-	/*
-	* Class:     cn_sgool_dll_Login
-	* Method:    connectToAppServer
-	* Signature: (Ljava/lang/String;Ljava/lang/String;)I
-	*/
-	JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_connectToAppServer
-	(JNIEnv *, jobject, jstring, jstring);
+/*
+ * Class:     cn_sgool_dll_Login
+ * Method:    connectToAppServer
+ * Signature: (Ljava/lang/String;Ljava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_connectToAppServer
+  (JNIEnv *, jobject, jstring, jstring);
 
-	/*
-	* Class:     cn_sgool_dll_Login
-	* Method:    upLoginData
-	* Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;D[Ljava/lang/String;Ljava/lang/String;)I
-	*/
-	JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData
-	(JNIEnv *, jobject, jstring, jstring, jstring, jstring, jdouble, jobjectArray, jstring);
+/*
+ * Class:     cn_sgool_dll_Login
+ * Method:    upLoginData
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jobjectArray, jstring);
 
 #ifdef __cplusplus
 }

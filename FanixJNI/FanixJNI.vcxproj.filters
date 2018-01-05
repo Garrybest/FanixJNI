@@ -18,9 +18,6 @@
     <ClInclude Include="cn_sgool_dll_Classify.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="cn_sgool_dll_Login.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="cn_sgool_dll_SelectBattInfo.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -37,6 +34,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cn_sgool_dll_Login.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

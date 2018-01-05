@@ -58,7 +58,7 @@ JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_connectToAppServer(JNIEnv *env, j
 }
 
 
-JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData(JNIEnv *env, jobject obj, jstring jServerIP, jstring jServerPort, jstring jTrayId, jstring jTrayRfid, jdouble jLoginTime, jobjectArray jBattstrArr, jstring jIsNew)
+JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData(JNIEnv *env, jobject obj, jstring jServerIP, jstring jServerPort, jstring jTrayId, jstring jTrayRfid, jobjectArray jBattstrArr, jstring jIsNew)
 {
 	char* serverIP;
 	int serverPort;
@@ -80,12 +80,15 @@ JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData(JNIEnv *env, jobject 
 	trayRfid = _atoi64((char*)env->GetStringUTFChars(jTrayRfid, 0));
 	isNew = (char*)env->GetStringUTFChars(jIsNew, 0);
 			
-	//int length = env->GetArrayLength(jBattstrArr);
-	//for (int i = 0; i < length; i++) {
-	//	jstring str = (jstring)(env->GetObjectArrayElement(jBattstrArr, 0));
-	//	char* battstr = (char*)env->GetStringUTFChars(str, 0);
-	//	stringArray.battstrArr[i] = battstr;
-	//}
+	int length = env->GetArrayLength(jBattstrArr);
+	for (int i = 0; i < length; i++) {
+		jstring str = (jstring)(env->GetObjectArrayElement(jBattstrArr, 0));
+		int battlen = env->GetStringUTFLength(str);
+		char* battstr = (char*)env->GetStringUTFChars(str, 0);
+		for (int j = 0; j < battlen; j++) {
+			stringArray.battstrArr[i][j] = battstr[j];
+		}
+	}
 	
 
 	//加载登录DLL，检查数据库连接
