@@ -80,9 +80,9 @@ JNIEXPORT jint JNICALL Java_cn_sgool_dll_Login_upLoginData(JNIEnv *env, jobject 
 	trayRfid = _atoi64((char*)env->GetStringUTFChars(jTrayRfid, 0));
 	isNew = (char*)env->GetStringUTFChars(jIsNew, 0);
 			
-	int length = env->GetArrayLength(jBattstrArr);
+	int length = env->GetArrayLength(jBattstrArr); 
 	for (int i = 0; i < length; i++) {
-		jstring str = (jstring)(env->GetObjectArrayElement(jBattstrArr, 0));
+		jstring str = (jstring)(env->GetObjectArrayElement(jBattstrArr, i));
 		int battlen = env->GetStringUTFLength(str);
 		char* battstr = (char*)env->GetStringUTFChars(str, 0);
 		for (int j = 0; j < battlen; j++) {
